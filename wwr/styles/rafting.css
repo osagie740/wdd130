@@ -166,3 +166,52 @@ figcaption {
 .socialmedia img {
     width: 32px;
 }
+
+.company-info {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 20px;
+}
+
+.contact-grid iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input,
+textarea {
+    padding: 8px;
+}
+
+button {
+    padding: 10px;
+    background-color: #0b5ed7;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.employee-cards {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.employee-cards img {
+    width: 150px;
+    border-radius: 8px;
+}
