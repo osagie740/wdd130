@@ -19,7 +19,6 @@ body {
     display: grid;
     grid-template-columns: 150px 1fr;
     align-items: center;
-
     background: #b7a6d8;
     padding: 1rem 2rem;
 }
@@ -45,10 +44,13 @@ body {
     border-radius: 6px;
     color: #222;
     font-weight: bold;
+    transition: all 0.3s ease;
 }
 
+/* FIXED: Color contrast error */
 .main-nav a:hover {
-    background: #ddd;
+    background: #0B3D5F;
+    color: white;
 }
 
 /* =========================
@@ -67,11 +69,13 @@ body {
 
 .hero h1 {
     position: absolute;
-    top: 20px;
+    top: 50%;
     left: 0;
     right: 0;
+    transform: translateY(-50%);
     color: white;
     font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-card {
@@ -152,7 +156,6 @@ figcaption {
 .site-footer {
     background: #b7a6d8;
     padding: 1rem 2rem;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -214,4 +217,256 @@ button {
 .employee-cards img {
     width: 150px;
     border-radius: 8px;
+}
+
+/* =================================
+   HOME PAGE (index.html ONLY)
+================================= */
+
+/* Call To Action */
+.cta {
+    background: white;
+    padding: 2rem;
+    margin: 2rem;
+    text-align: center;
+}
+
+/* FIXED: Base CTA button - moved common styles here */
+.cta-btn {
+    display: inline-block;
+    padding: .7rem 1.5rem;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+/* Home page CTA */
+.cta .cta-btn {
+    background: #0b5ed7;
+    color: white;
+}
+
+.cta .cta-btn:hover {
+    background: #0947a3;
+}
+
+/* Newsletter */
+.newsletter {
+    background: white;
+    padding: 2rem;
+    margin: 2rem;
+    text-align: center;
+}
+
+.newsletter form {
+    max-width: 400px;
+    margin: auto;
+}
+
+/* Grid layout for home content (REQUIRED by rubric) */
+.home-grid {
+    background: white;
+    padding: 2rem;
+    margin: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.grid-box {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.grid-box:hover {
+    transform: translateY(-5px);
+}
+
+.grid-box img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.grid-box h3 {
+    padding: 1rem 1rem 0.5rem;
+    color: #0B3D5F;
+}
+
+.grid-box p {
+    padding: 0 1rem 1.5rem;
+    color: #333;
+}
+
+/* =========================
+   TRIPS HERO
+========================= */
+.trips-hero {
+    background: #0b5ed7;
+    color: white;
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+/* FIXED: Trips page CTA light version */
+.cta-btn-light {
+    display: inline-block;
+    margin-top: 1rem;
+    background: white;
+    color: #0b5ed7;
+    padding: .7rem 1.5rem;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cta-btn-light:hover {
+    background: #f0f0f0;
+    color: #0947a3;
+}
+
+/* =========================
+   TRIP CARDS GRID
+========================= */
+.trip-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 2rem;
+}
+
+.trip-card {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.trip-card:hover {
+    transform: translateY(-5px);
+}
+
+.trip-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.trip-card h3 {
+    margin: 1rem 0 .5rem;
+    color: #0B3D5F;
+}
+
+.trip-card p {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+/* =========================
+   TABLE SECTION
+========================= */
+.trip-table-section {
+    background: white;
+    margin: 2rem;
+    padding: 2rem;
+    text-align: center;
+}
+
+.trip-table-section h2 {
+    color: #0B3D5F;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+.trip-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background: white;
+}
+
+.trip-table th {
+    background: #0B3D5F;
+    color: white;
+    border: none;
+    padding: 1rem;
+    font-weight: bold;
+}
+
+.trip-table td {
+    border: 1px solid #ccc;
+    padding: .8rem;
+    color: #333;
+}
+
+.trip-table tr:hover {
+    background: #f5f5f5;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+    .trip-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .home-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .site-header {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 1rem;
+    }
+
+    .main-nav ul {
+        justify-content: center;
+    }
+
+    .history-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .adventure-gallery {
+        flex-wrap: wrap;
+    }
+
+    .adventure-gallery figure {
+        flex: 0 0 calc(50% - 0.5rem);
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .adventure-gallery figure {
+        flex: 0 0 100%;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
 }
